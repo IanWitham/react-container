@@ -1,30 +1,31 @@
 /* TODO: insert default styles of your component here for easy access */
 
-.container {
+.ms-container {
    display: flex;
    flex: 1;
    flex-direction: column;
 }
 
-.header {
+.ms-header {
+   background-color: #eee;
    display: flex;
    flex: 0.1;
    flex-direction: row;
 }
 
-.body {
+.ms-body {
    display: flex;
    flex: 0.9;
    flex-direction: row;
 }
 
-.menu {
+.ms-menu {
    display: flex;
    flex: 0.2;
    flex-direction: column;
 }
 
-.body-container {
+.ms-body-container {
    display: flex;
    flex: 0.8;
    flex-direction: column;

@@ -11,15 +11,15 @@ export default class Container extends Component {
 
    render(){
       return (
-         <div className="container">
-            <div className="header">
+         <div className="ms-container">
+            <div className="ms-header">
                {this.props.header}
             </div>
-            <div className="body">
-               <div className="menu">
+            <div className="ms-body">
+               <div className="ms-menu">
                   {this.props.menu}
                </div>
-               <div className="body-container">
+               <div className="ms-body-container">
                   {this.props.children}
                </div>
             </div>
