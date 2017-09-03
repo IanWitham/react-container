@@ -1,5 +1,31 @@
 /* TODO: insert default styles of your component here for easy access */
 
+.ms-menu-list{
+   list-style:none;
+   padding: 0;
+}
+
+.ms-menu-item{
+   align-items: center;
+   justify-content: center;
+   height: 40px;
+   cursor: pointer;
+   display: flex;
+}
+
+
+.ms-menu-item:hover{
+   background-color: #eee;
+}
+
+.ms-header-menu{
+   align-items: center;
+   justify-content: center;
+   display: flex;
+   margin-left: 10px;
+   font-size: 25px;
+}
+
 .ms-container {
    display: flex;
    flex: 1;
@@ -23,6 +49,7 @@
    display: flex;
    flex: 0.2;
    flex-direction: column;
+   box-shadow: 0 5px 10px black;
 }
 
 .ms-body-container {

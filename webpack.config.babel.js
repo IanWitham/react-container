@@ -86,6 +86,10 @@ const dev = merge(common, siteCommon, {
   ],
   module: {
     loaders: [
+       {
+         test: /\.svg$/,
+         use: ['react-svg-loader']
+       },
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
