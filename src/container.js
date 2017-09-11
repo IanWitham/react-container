@@ -40,7 +40,7 @@ export default class Container extends Component {
    render(){
       return (
          <div className="ms-container">
-            <div className="ms-header">
+            <div className="ms-header" style = {{height: (this.props.menuStyle) ? this.props.menuStyle.height : '50px'}}>
                <div className="ms-header-menu">
                   <Bar />
                </div>

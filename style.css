@@ -35,13 +35,12 @@
 .ms-header {
    background-color: #eee;
    display: flex;
-   flex: 0.1;
    flex-direction: row;
 }
 
 .ms-body {
    display: flex;
-   flex: 0.9;
+   flex: 1;
    flex-direction: row;
 }
 
