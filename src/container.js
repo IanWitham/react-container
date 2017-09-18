@@ -9,7 +9,8 @@ export default class Container extends Component {
    constructor(props){
       super(props);
       this.state = {
-         ...props
+         ...props,
+         selected : ""
       }
    }
 
@@ -23,6 +24,7 @@ export default class Container extends Component {
 
    _onPress(x){
       if(this.props.onMenuSelect){
+         this.setState({selected : x.label});
          this.props.onMenuSelect(x);
       }
    }
@@ -30,7 +32,7 @@ export default class Container extends Component {
    renderMenuItems(){
       return this.state.menu.map((x) => {
          return (
-            <li className="ms-menu-item" onClick={this._onPress.bind(this, x)}>
+            <li className={this.state.selected === x.label ? "ms-menu-item ms-menu-item-selected" : "ms-menu-item"} onClick={this._onPress.bind(this, x)}>
                {x.label}
             </li>
          );

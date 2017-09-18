@@ -6,16 +6,23 @@
 }
 
 .ms-menu-item{
-   align-items: center;
-   justify-content: center;
-   height: 40px;
+   align-items : center;
+   padding-left : 15px;
+   justify-content: left;
+   height: 50px;
    cursor: pointer;
    display: flex;
+   color : #424242;
+   font-size : 1.3em;
 }
 
 
 .ms-menu-item:hover{
-   background-color: #eee;
+   background-color: #ccc;
+}
+
+.ms-menu-item-selected {
+   background : #ddd;
 }
 
 .ms-header-menu{
@@ -33,7 +40,8 @@
 }
 
 .ms-header {
-   background-color: #eee;
+   background-color: #fff;
+   border-bottom : 1px solid #ccc;
    display: flex;
    flex-direction: row;
 }
@@ -48,7 +56,7 @@
    display: flex;
    flex: 0.2;
    flex-direction: column;
-   box-shadow: 0 5px 10px black;
+   border-right : 1px solid #ddd;
 }
 
 .ms-body-container {
