@@ -5,13 +5,19 @@
    padding: 0;
 }
 
+.hamburger {
+   cursor : pointer;
+}
+
 .ms-menu-item{
+   overflow : hidden;
    align-items : center;
    padding-left : 15px;
    justify-content: left;
    height: 50px;
    cursor: pointer;
    display: flex;
+   width : 100%;
    color : #424242;
    font-size : 1.3em;
 }
@@ -55,13 +61,23 @@
 .ms-menu {
    display: flex;
    flex: 0.2;
+   transition : 1s;
    flex-direction: column;
    border-right : 1px solid #ddd;
 }
 
+.ms-menu-hidden {
+   display : flex;
+   overflow : hidden;
+   width : 0px;
+   transition : 1s;
+   border-right : 1px solid #ddd;
+}
+
+
 .ms-body-container {
    display: flex;
-   flex: 0.8;
+   flex: 1;
    flex-direction: column;
 }
 

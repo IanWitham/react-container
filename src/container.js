@@ -10,7 +10,8 @@ export default class Container extends Component {
       super(props);
       this.state = {
          ...props,
-         selected : ""
+         selected : "",
+         showBar : true
       }
    }
 
@@ -39,17 +40,24 @@ export default class Container extends Component {
       });
    }
 
+   changeBarState(){
+      this.setState({
+         showBar : !this.state.showBar
+      });  
+      console.log("Changed hamburger state");
+   }
+
    render(){
       return (
          <div className="ms-container">
             <div className="ms-header" style = {{height: (this.props.menuStyle) ? this.props.menuStyle.height : '50px'}}>
                <div className="ms-header-menu">
-                  <Bar />
+                  <Bar className = "hamburger" onClick = {this.changeBarState.bind(this)}/>
                </div>
                {this.props.header}
             </div>
             <div className="ms-body">
-               <div className="ms-menu">
+               <div className={this.state.showBar ? "ms-menu" : "ms-menu-hidden"}>
                   <ul className="ms-menu-list">
                      {this.renderMenuItems()} 
                   </ul>
