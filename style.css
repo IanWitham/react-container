@@ -40,6 +40,23 @@
    font-size: 25px;
 }
 
+.ms-user-display-container {
+   position : fixed;
+   right : 0px;
+   margin-right : 10px;
+}
+
+.ms-user-display {
+   height : 40px;
+}
+.ms-user-display div {
+   font-size : 15px;
+   align-items : center;
+}
+.ms-user-display .user {
+   margin-left : 15px
+}
+
 .ms-container {
    display: flex;
    flex: 1;

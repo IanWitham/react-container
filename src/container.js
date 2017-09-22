@@ -1,7 +1,7 @@
 import React, {
    Component
 } from 'react';
-
+import {ListGroup, ListGroupItem, Glyphicon} from 'react-bootstrap';
 import Bar from 'react-icons/lib/fa/bars';
 import '../style.css';
 
@@ -11,7 +11,8 @@ export default class Container extends Component {
       this.state = {
          ...props,
          selected : "",
-         showBar : true
+         showBar : true,
+         userName : 'Example User'
       }
    }
 
@@ -46,6 +47,7 @@ export default class Container extends Component {
       });  
       console.log("Changed hamburger state");
    }
+ 
 
    render(){
       return (
@@ -53,6 +55,9 @@ export default class Container extends Component {
             <div className="ms-header" style = {{height: (this.props.menuStyle) ? this.props.menuStyle.height : '50px'}}>
                <div className="ms-header-menu">
                   <Bar className = "hamburger" onClick = {this.changeBarState.bind(this)}/>
+                  <ListGroup className="list-group ms-user-display-container">
+                    <ListGroupItem className="list-group-item ms-user-display"><div>{this.state.userName}<Glyphicon className="user" glyph="user"/></div></ListGroupItem>
+                  </ListGroup>
                </div>
                {this.props.header}
             </div>
