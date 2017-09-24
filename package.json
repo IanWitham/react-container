@@ -4,11 +4,6 @@
   "author": "Metamorphic Studios",
   "version": "1.0.0",
   "scripts": {
-    "start": "webpack-dev-server --env dev",
-    "gh-pages": "webpack --env ghPages",
-    "gh-pages:deploy": "gh-pages -d gh-pages",
-    "gh-pages:stats": "webpack --env ghPages --profile --json > stats.json",
-    "dist": "webpack --env dist",
     "dist:es6": "BABEL_ENV=es6 babel ./src --out-dir ./dist-es6",
     "dist:min": "webpack --env distMin",
     "dist:modules": "BABEL_ENV=modules babel ./src --out-dir ./dist-modules",
