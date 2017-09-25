@@ -48,6 +48,7 @@
 }
 
 .ms-user-display {
+   cursor: pointer;
    height : 40px;
 }
 .ms-user-display div {
