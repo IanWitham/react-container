@@ -9,7 +9,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 import React, { Component } from 'react';
-
+import { ListGroup, ListGroupItem, Glyphicon } from 'react-bootstrap';
 import Bar from 'react-icons/lib/fa/bars';
 import '../style.css';
 
@@ -23,7 +23,8 @@ var Container = function (_Component) {
 
       _this.state = _extends({}, props, {
          selected: "",
-         showBar: true
+         showBar: true,
+         userName: 'Example User'
       });
       return _this;
    }
@@ -76,7 +77,21 @@ var Container = function (_Component) {
                React.createElement(
                   'div',
                   { className: 'ms-header-menu' },
-                  React.createElement(Bar, { className: 'hamburger', onClick: this.changeBarState.bind(this) })
+                  React.createElement(Bar, { className: 'hamburger', onClick: this.changeBarState.bind(this) }),
+                  React.createElement(
+                     ListGroup,
+                     { className: 'list-group ms-user-display-container' },
+                     React.createElement(
+                        ListGroupItem,
+                        { className: 'list-group-item ms-user-display' },
+                        React.createElement(
+                           'div',
+                           null,
+                           this.state.userName,
+                           React.createElement(Glyphicon, { className: 'user', glyph: 'user' })
+                        )
+                     )
+                  )
                ),
                this.props.header
             ),

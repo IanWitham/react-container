@@ -12,6 +12,8 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactBootstrap = require('react-bootstrap');
+
 var _bars = require('react-icons/lib/fa/bars');
 
 var _bars2 = _interopRequireDefault(_bars);
@@ -36,7 +38,8 @@ var Container = function (_Component) {
 
       _this.state = _extends({}, props, {
          selected: "",
-         showBar: true
+         showBar: true,
+         userName: 'Example User'
       });
       return _this;
    }
@@ -89,7 +92,21 @@ var Container = function (_Component) {
                _react2.default.createElement(
                   'div',
                   { className: 'ms-header-menu' },
-                  _react2.default.createElement(_bars2.default, { className: 'hamburger', onClick: this.changeBarState.bind(this) })
+                  _react2.default.createElement(_bars2.default, { className: 'hamburger', onClick: this.changeBarState.bind(this) }),
+                  _react2.default.createElement(
+                     _reactBootstrap.ListGroup,
+                     { className: 'list-group ms-user-display-container' },
+                     _react2.default.createElement(
+                        _reactBootstrap.ListGroupItem,
+                        { className: 'list-group-item ms-user-display' },
+                        _react2.default.createElement(
+                           'div',
+                           null,
+                           this.state.userName,
+                           _react2.default.createElement(_reactBootstrap.Glyphicon, { className: 'user', glyph: 'user' })
+                        )
+                     )
+                  )
                ),
                this.props.header
             ),
