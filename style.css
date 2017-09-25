@@ -73,7 +73,7 @@
 
 .ms-body {
    display: flex;
-   min-width: 10%;
+   flex: 1;
    flex-direction: row;
 }
 
@@ -96,7 +96,8 @@
 
 .ms-body-container {
    display: flex;
-   flex: 1;
+   min-width: 10%;
+   height: 100%;
    flex-direction: column;
 }
 
