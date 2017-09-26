@@ -10,10 +10,12 @@ export default class Container extends Component {
       super(props);
       this.state = {
          ...props,
+         receivedFirstUpdate : false,
          selected : "",
          showBar : true,
          userName : 'Example User'
       }
+
    }
 
    componentWillReceiveProps(newProps){
@@ -21,6 +23,15 @@ export default class Container extends Component {
          this.setState({
             ...newProps
          });
+        /* 
+         if(!this.state.receivedFirstUpdate){
+            if(typeof this.state.menu != 'undefined'){
+               this.state.menu.map((x) => {
+                  this._onPress(x);
+                  this.setState({receivedFirstUpdate : true});
+               });
+            }
+         }*/
       }
    }
 

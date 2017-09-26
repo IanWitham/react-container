@@ -37,10 +37,12 @@ var Container = function (_Component) {
       var _this = _possibleConstructorReturn(this, (Container.__proto__ || Object.getPrototypeOf(Container)).call(this, props));
 
       _this.state = _extends({}, props, {
+         receivedFirstUpdate: false,
          selected: "",
          showBar: true,
          userName: 'Example User'
       });
+
       return _this;
    }
 
@@ -49,6 +51,15 @@ var Container = function (_Component) {
       value: function componentWillReceiveProps(newProps) {
          if (this.props !== newProps) {
             this.setState(_extends({}, newProps));
+            /* 
+             if(!this.state.receivedFirstUpdate){
+                if(typeof this.state.menu != 'undefined'){
+                   this.state.menu.map((x) => {
+                      this._onPress(x);
+                      this.setState({receivedFirstUpdate : true});
+                   });
+                }
+             }*/
          }
       }
    }, {

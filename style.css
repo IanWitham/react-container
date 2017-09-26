@@ -3,7 +3,7 @@
 .ms-menu-list{
    list-style:none;
    padding: 0;
-   width: 150px;
+   width: 100%;
 }
 
 .hamburger {
@@ -80,7 +80,7 @@
 
 .ms-menu {
    display: flex;
-   width : 200px;
+   width : 20%;
    transition : 0.5s;
    flex-direction: column;
    border-right : 1px solid #ddd;
