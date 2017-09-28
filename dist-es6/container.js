@@ -88,21 +88,7 @@ var Container = function (_Component) {
                React.createElement(
                   'div',
                   { className: 'ms-header-menu' },
-                  React.createElement(Bar, { className: 'hamburger', onClick: this.changeBarState.bind(this) }),
-                  React.createElement(
-                     ListGroup,
-                     { className: 'list-group ms-user-display-container' },
-                     React.createElement(
-                        ListGroupItem,
-                        { className: 'list-group-item ms-user-display' },
-                        React.createElement(
-                           'div',
-                           null,
-                           this.state.userName,
-                           React.createElement(Glyphicon, { className: 'user', glyph: 'user' })
-                        )
-                     )
-                  )
+                  React.createElement(Bar, { className: 'hamburger', onClick: this.changeBarState.bind(this) })
                ),
                this.props.header
             ),

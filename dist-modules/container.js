@@ -103,21 +103,7 @@ var Container = function (_Component) {
                _react2.default.createElement(
                   'div',
                   { className: 'ms-header-menu' },
-                  _react2.default.createElement(_bars2.default, { className: 'hamburger', onClick: this.changeBarState.bind(this) }),
-                  _react2.default.createElement(
-                     _reactBootstrap.ListGroup,
-                     { className: 'list-group ms-user-display-container' },
-                     _react2.default.createElement(
-                        _reactBootstrap.ListGroupItem,
-                        { className: 'list-group-item ms-user-display' },
-                        _react2.default.createElement(
-                           'div',
-                           null,
-                           this.state.userName,
-                           _react2.default.createElement(_reactBootstrap.Glyphicon, { className: 'user', glyph: 'user' })
-                        )
-                     )
-                  )
+                  _react2.default.createElement(_bars2.default, { className: 'hamburger', onClick: this.changeBarState.bind(this) })
                ),
                this.props.header
             ),
