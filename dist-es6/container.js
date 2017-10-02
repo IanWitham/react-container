@@ -23,6 +23,7 @@ var Container = function (_Component) {
 
       _this.state = _extends({}, props, {
          receivedFirstUpdate: false,
+         receivedRoute: false,
          selected: "",
          showBar: true,
          userName: 'Example User'
@@ -52,12 +53,25 @@ var Container = function (_Component) {
          var _this2 = this;
 
          /*Handle the selection of the first item in the menu*/
-         if (this.state.menu && !this.state.receivedFirstUpdate) {
-            if (typeof this.state.menu[0] !== 'undefined') {
-               this._onPress(this.state.menu[0]);
-               this.setState({ receivedFirstUpdate: true });
+         if (this.state.menu) {
+            if (typeof this.props.route !== 'undefined') {
+               if (this.props.route !== '' && !this.state.receivedRoute) {
+                  console.log(this.props.route.toUpperCase());
+                  var r;
+                  this.state.menu.map(function (x) {
+                     if (x.label.toUpperCase() == _this2.state.route.toUpperCase()) {
+                        r = x;
+                     }
+                  });
+                  this._onPress(r);
+                  this.setState({ receivedFirstUpdate: true, receivedRoute: true });
+               } else if (typeof this.state.menu[0] !== 'undefined' && !this.state.receivedFirstUpdate) {
+                  this._onPress(this.state.menu[0]);
+                  this.setState({ receivedFirstUpdate: true });
+               }
             }
          }
+
          /*Then render the items*/
          return this.state.menu.map(function (x) {
             return React.createElement(
