@@ -15,7 +15,7 @@ export default class Container extends Component {
          showBar : true,
          userName : 'Example User'
       }
-
+      
    }
 
    componentWillReceiveProps(newProps){
@@ -23,15 +23,6 @@ export default class Container extends Component {
          this.setState({
             ...newProps
          });
-        /* 
-         if(!this.state.receivedFirstUpdate){
-            if(typeof this.state.menu != 'undefined'){
-               this.state.menu.map((x) => {
-                  this._onPress(x);
-                  this.setState({receivedFirstUpdate : true});
-               });
-            }
-         }*/
       }
    }
 
@@ -43,6 +34,14 @@ export default class Container extends Component {
    }
 
    renderMenuItems(){
+      /*Handle the selection of the first item in the menu*/
+      if(this.state.menu && !this.state.receivedFirstUpdate) {
+         if(typeof this.state.menu[0] !== 'undefined'){
+            this._onPress(this.state.menu[0]);
+            this.setState({receivedFirstUpdate : true});
+         }
+      }
+      /*Then render the items*/
       return this.state.menu.map((x) => {
          return (
             <li className={this.state.selected === x.label ? "ms-menu-item ms-menu-item-selected" : "ms-menu-item"} onClick={this._onPress.bind(this, x)}>
@@ -56,7 +55,6 @@ export default class Container extends Component {
       this.setState({
          showBar : !this.state.showBar
       });  
-      console.log("Changed hamburger state");
    }
  
 

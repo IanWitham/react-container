@@ -36,15 +36,6 @@ var Container = function (_Component) {
       value: function componentWillReceiveProps(newProps) {
          if (this.props !== newProps) {
             this.setState(_extends({}, newProps));
-            /* 
-             if(!this.state.receivedFirstUpdate){
-                if(typeof this.state.menu != 'undefined'){
-                   this.state.menu.map((x) => {
-                      this._onPress(x);
-                      this.setState({receivedFirstUpdate : true});
-                   });
-                }
-             }*/
          }
       }
    }, {
@@ -60,6 +51,14 @@ var Container = function (_Component) {
       value: function renderMenuItems() {
          var _this2 = this;
 
+         /*Handle the selection of the first item in the menu*/
+         if (this.state.menu && !this.state.receivedFirstUpdate) {
+            if (typeof this.state.menu[0] !== 'undefined') {
+               this._onPress(this.state.menu[0]);
+               this.setState({ receivedFirstUpdate: true });
+            }
+         }
+         /*Then render the items*/
          return this.state.menu.map(function (x) {
             return React.createElement(
                'li',
@@ -74,7 +73,6 @@ var Container = function (_Component) {
          this.setState({
             showBar: !this.state.showBar
          });
-         console.log("Changed hamburger state");
       }
    }, {
       key: 'render',
