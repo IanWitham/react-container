@@ -12,8 +12,6 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactBootstrap = require('react-bootstrap');
-
 var _bars = require('react-icons/lib/fa/bars');
 
 var _bars2 = _interopRequireDefault(_bars);

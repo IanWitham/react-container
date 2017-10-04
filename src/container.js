@@ -1,7 +1,6 @@
 import React, {
    Component
 } from 'react';
-import {ListGroup, ListGroupItem, Glyphicon} from 'react-bootstrap';
 import Bar from 'react-icons/lib/fa/bars';
 import '../style.css';
 
