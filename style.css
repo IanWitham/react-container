@@ -12,6 +12,7 @@
 
 .ms-menu-item{
    white-space : nowrap;
+   user-select : none;
    overflow : hidden;
    align-items : center;
    padding-left : 15px;
@@ -81,7 +82,7 @@
 .ms-menu {
    display: flex;
    width : 20%;
-   transition : 0.5s;
+   transition : 0.2s;
    flex-direction: column;
    border-right : 1px solid #ddd;
 }
@@ -90,13 +91,12 @@
    display : flex;
    overflow : hidden;
    width : 0px;
-   transition : 0.5s;
+   transition : 0.2s;
    border-right : 1px solid #ddd;
 }
 
 
 .ms-body-container {
-   display: flex;
    width: 100%;
    min-width: 10%;
    height: 100%;
