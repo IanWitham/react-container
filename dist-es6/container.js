@@ -88,6 +88,19 @@ var Container = function (_Component) {
          });
       }
    }, {
+      key: '_renderBrandLogo',
+      value: function _renderBrandLogo() {
+         if (this.props.brand && this.props.brand.logo) {
+            return React.createElement(
+               'div',
+               { className: 'ms-menu-logo' },
+               React.createElement('img', { src: this.props.brand.logo })
+            );
+         } else {
+            return null;
+         }
+      }
+   }, {
       key: 'render',
       value: function render() {
          return React.createElement(
@@ -109,6 +122,7 @@ var Container = function (_Component) {
                React.createElement(
                   'div',
                   { className: this.state.showBar ? "ms-menu" : "ms-menu-hidden" },
+                  this._renderBrandLogo(),
                   React.createElement(
                      'ul',
                      { className: 'ms-menu-list' },

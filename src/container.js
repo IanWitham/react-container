@@ -69,7 +69,17 @@ export default class Container extends Component {
          showBar : !this.state.showBar
       });  
    }
- 
+
+
+   _renderBrandLogo(){
+      if(this.props.brand && this.props.brand.logo){
+         return (<div className="ms-menu-logo">
+            <img src={this.props.brand.logo} />
+         </div>);
+      }else{
+         return null;
+      }
+   }
 
    render(){
       return (
@@ -82,6 +92,7 @@ export default class Container extends Component {
             </div>
             <div className="ms-body">
                <div className={this.state.showBar ? "ms-menu" : "ms-menu-hidden"}>
+                  {this._renderBrandLogo()}      
                   <ul className="ms-menu-list">
                      {this.renderMenuItems()} 
                   </ul>

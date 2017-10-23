@@ -102,6 +102,19 @@ var Container = function (_Component) {
          });
       }
    }, {
+      key: '_renderBrandLogo',
+      value: function _renderBrandLogo() {
+         if (this.props.brand && this.props.brand.logo) {
+            return _react2.default.createElement(
+               'div',
+               { className: 'ms-menu-logo' },
+               _react2.default.createElement('img', { src: this.props.brand.logo })
+            );
+         } else {
+            return null;
+         }
+      }
+   }, {
       key: 'render',
       value: function render() {
          return _react2.default.createElement(
@@ -123,6 +136,7 @@ var Container = function (_Component) {
                _react2.default.createElement(
                   'div',
                   { className: this.state.showBar ? "ms-menu" : "ms-menu-hidden" },
+                  this._renderBrandLogo(),
                   _react2.default.createElement(
                      'ul',
                      { className: 'ms-menu-list' },
