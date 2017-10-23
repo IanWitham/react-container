@@ -88,7 +88,7 @@ export default class Container extends Component {
                <div className="ms-header-menu">
                   <Bar className = "hamburger" onClick = {this.changeBarState.bind(this)}/>
                </div>
-               {this.props.header}
+               {(this.state.showBar) ? null : this.props.header}
             </div>
             <div className="ms-body">
                <div className={this.state.showBar ? "ms-menu" : "ms-menu-hidden"}>
