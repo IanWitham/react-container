@@ -81,6 +81,14 @@ export default class Container extends Component {
       }
    }
 
+   _renderHeader(){
+      if(!this.state.showBar){
+         return this.props.header;
+      }else{
+         return null;
+      }
+   }
+
    render(){
       return (
          <div className="ms-container">
@@ -88,7 +96,7 @@ export default class Container extends Component {
                <div className="ms-header-menu">
                   <Bar className = "hamburger" onClick = {this.changeBarState.bind(this)}/>
                </div>
-               {(this.state.showBar) ? null : this.props.header}
+                  {this._renderHeader()}
             </div>
             <div className="ms-body">
                <div className={this.state.showBar ? "ms-menu" : "ms-menu-hidden"}>

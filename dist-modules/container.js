@@ -115,6 +115,15 @@ var Container = function (_Component) {
          }
       }
    }, {
+      key: '_renderHeader',
+      value: function _renderHeader() {
+         if (!this.state.showBar) {
+            return this.props.header;
+         } else {
+            return null;
+         }
+      }
+   }, {
       key: 'render',
       value: function render() {
          return _react2.default.createElement(
@@ -128,7 +137,7 @@ var Container = function (_Component) {
                   { className: 'ms-header-menu' },
                   _react2.default.createElement(_bars2.default, { className: 'hamburger', onClick: this.changeBarState.bind(this) })
                ),
-               this.props.header
+               this._renderHeader()
             ),
             _react2.default.createElement(
                'div',
