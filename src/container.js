@@ -104,6 +104,7 @@ export default class Container extends Component {
                   <ul className="ms-menu-list">
                      {this.renderMenuItems()} 
                   </ul>
+                  {this.props.footer}
                </div>
                <div className="ms-body-container">
                   {this.props.children}

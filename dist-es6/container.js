@@ -136,7 +136,8 @@ var Container = function (_Component) {
                      'ul',
                      { className: 'ms-menu-list' },
                      this.renderMenuItems()
-                  )
+                  ),
+                  this.props.footer
                ),
                React.createElement(
                   'div',
